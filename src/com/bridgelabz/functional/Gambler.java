@@ -12,11 +12,7 @@ public class Gambler
 		int Trials=Integer.parseInt(args[2]);
 		int bets=0;
 		int wins=0;
-		
-			System.out.println(wins+" "+"Game wins"+" "+Trials);
-			System.out.println("percent of win"+100.0*wins/Trials);
-			System.out.println("Average of bets"+1.0*bets/Trials);
-			Utility.Gambler($stake, $goal, Trials, bets, wins);
+		Utility.Gambler($stake, $goal, Trials, bets, wins);
 		}
 				
 		

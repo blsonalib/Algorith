@@ -23,7 +23,9 @@ public class UtilityAlgorithm
 		{
 		
 			return scanner.nextDouble();
+			
 		}
+		
 	/*program for Anagram string or not */
 		public static void AnagramDetection(String string1,String string2,int length1,int length2,int length,int i,int j,int found,int notfound)
 		{
@@ -180,21 +182,22 @@ public static boolean LeapYear(int year)
 		    int	x = y0 + (y0/ 4) - (y0 /100) + (y0/400);
 		    int	m0 = month + 12* ((14 - month) / 12) - 2;
 		    int	d0 = (day + x + 31* m0/12)%7;
+		    System.out.println(d0);
 		    switch(d0)
 		    {
+		    case 0 : System.out.println("its sunday");
+		    		  break;
 		    case 1 : System.out.println("its monday");
 		    		  break;
 		    case 2 : System.out.println("its tuesday");
-		    		  break;
-		    case 3 : System.out.println("its wednesday");
 			    	  break;
-		    case 4 : System.out.println("its thursday");
+		    case 3 : System.out.println("its wednesday");
+			  		  break;
+		    case 4 : System.out.println("its thusday");
 			  		  break;
 		    case 5 : System.out.println("its friday");
 			  		  break;
 		    case 6 : System.out.println("its saturday");
-			  		  break;
-		    case 0 : System.out.println("its sunday");
 			          break;
 		}
 		   
@@ -427,22 +430,51 @@ for (int number = 1; number <= num; number++)
 System.out.println();
 }
 
-/*program binary search for integer*/
+/*program insertion sort for integer*/
+public static void InsertionSortInteger(int a[],int temp)
+{ 
+	for( int i=1;i<a.length;i++)
+	{
+		temp=a[i];
+		int j=i;
+		while(j>0&&a[j-1]>temp)
+		{
+			a[j]=a[j-1];
+			j=j-1;
+		}
+		a[j]=temp;
+		
+	}
+	for(int i=0;i<a.length;i++)
+	{
+		System.out.println(+a[i]+" ");
+	}
 
-public static int binarySearch(int arr[], int first, int last, int key){  
-    if (last>=first){  
-        int mid = first + (last - first)/2;  
-        if (arr[mid] == key){  
-        return mid;  
-        }  
-        if (arr[mid] > key){  
-        return binarySearch(arr, first, mid-1, key);//search in left subarray  
-        }else{  
-        return binarySearch(arr, mid+1, last, key);//search in right subarray  
-        }  
-    }  
-    return -1;  
-}  
 }
-
+/*program for integer bubble sort*/
+public static void BubbleSortInteger(int a[],int flag)
+{
+	for(int i=0;i<a.length;i++)//for around of loop
+	{
+		for(int j=0;j<a.length-1-i;j++)//for comparision
+		{
+			if(a[j]>a[j+1])
+			{
+				int temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+				flag=1;
+			}
+		}
+	if(flag==0)
+	{
+		break;
+	}
+	}
+	for(int i=0;i<a.length;i++)
+	{
+		System.out.println(a[i]+" ");
+	}
+}
+}
 

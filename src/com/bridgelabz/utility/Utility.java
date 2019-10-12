@@ -124,7 +124,7 @@ public static void StopWatch(int n,long start,long stop) throws InterruptedExcep
 }
 
 
-/* program for Gambler*/
+/* program for 2D array*/
 public static void ArrayOutputStream(int array[][],int row,int column,int i,int j)
 {
 	for(i=0;i<row;i++)
@@ -150,33 +150,33 @@ public static void ArrayOutputStream(int array[][],int row,int column,int i,int 
 /*program for Gambler*/
 public static void Gambler(int $stake,int $goal,int Trials,int bets,int wins)
 {
-	for(int number=0;number<Trials;number++)
+	for (int i=0; i< Trials; i++) 
 	{
-		int cash=$stake;
-		while(cash>0&&cash<$goal)
+		int cash = $stake;
+            
+		while (cash > 0 && cash < $goal)
 		{
 			bets++;
-			{
-				if(Math.random()<0.5)
-		     	{
-		    	 cash++; //won $1
-		     	}
-				else
-		 		{
-		    	 cash--;//lose $1
-		 		}
-			}
-		 }
-		 if(cash==0)
-			 wins++;
+        
+			if (Math.random() < 0.5) 
+				cash++;     // win $1
+			else                     
+				cash--;     // lose $1
 		}
+            if (cash == $goal) 
+            	wins++;                // to find no. of wins   
+	}
+	System.out.println();
+	System.out.println(wins + " wins of " + Trials);
+	System.out.println("Percent of games won = " + 100.0 * wins /Trials);
+	System.out.println("Avg # bets           = " + 1.0 * bets / Trials);
 }
 
 
 /*program for flip coins*/
 public static void Flipcoin(int flips,double i)
 {
-	double heads=0,tails=0;
+	double heads=0.0,tails=0.0;
 	while(i<=flips)
 	{
 		System.out.println(i+" "+Math.random());//random number between 0 and 1
@@ -197,7 +197,7 @@ public static void Flipcoin(int flips,double i)
 		i++;
 	}
 		System.out.print("\n");
-		double headpercent=heads*100/flips;
+		double headpercent=(heads/flips)*100;
 		System.out.println("percent of heads:"+ headpercent);
 		double tailspercent=100-(headpercent);
 		System.out.println("percent of tails:"+tailspercent);

@@ -12,9 +12,9 @@ public class DayOfWeek
 		
 		int month=Integer.parseInt(args[1]);
 		int year=Integer.parseInt(args[2]);
-		
+		System.out.println("date"+day+":month"+month+":year"+year+":");
 		boolean flag=true;
-		UtilityAlgorithm.validateDate(month, year, day);
+		UtilityAlgorithm.validateDate(month, day, year);
 	}
 
 }

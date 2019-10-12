@@ -20,8 +20,13 @@
 //		switch(choice)
 //		{
 //		case 1:
-//			UtilityAlgorithm.elapseTime();
-//			UtilityAlgorithm.
+//			String stringList[]= new String[]{"amit","bhoomi","janvi","diya","tiya"};
+//			String stringFind="amit";
+//			int lowest=0;
+//			int highest=stringList.length;
+//			//int middle=0;
+//			UtilityAlgorithm.elapsedTime();
+//			UtilityAlgorithm.BinaryWord(stringList, stringFind, lowest, highest);
 //		}
 //	}
 //

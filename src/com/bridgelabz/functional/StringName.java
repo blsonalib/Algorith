@@ -16,9 +16,10 @@ public class StringName
 	    System.out.println("Enter the name:");
 		String name=scan.next();
 		 
-         Pattern pattern=Pattern.compile("[A-Z][a-z]+{3,20}");
-         Matcher matcher=pattern.matcher(name);
-         if(matcher.matches())
+         //Pattern pattern=Pattern.compile("{3,20}");
+       //  Matcher matcher=pattern.matcher(name);
+        // if(matcher.matches())
+		if(name.length()>3)
          {
         	 st=st.replaceAll("<<UserName>>", name);
         	 System.out.println(st);
