@@ -1,6 +1,7 @@
 package com.bridgelabz.utility;
 
 import java.util.Arrays;
+import java.util.Queue;
 import java.util.Scanner;
 
 //import com.bridgelabz.datastructure.LinkedList.Node;
@@ -218,7 +219,83 @@ public class UtilityD
 		    return (((year % 4 == 0) && (year % 100 != 0)) || 
 		            (year % 400 == 0)); 
 		    } 
+
+  /*program for binary search tree */
+		public static double binarySearchTree(double total) 
+		{
+			double numerator=factor(2*total);
+			double denominator=factor(total+1)*factor(total);
+			double diffrence=numerator/denominator;
+			return diffrence;
+			
+		}
+		private static double factor(double d) 
+		{
+			double a=1;
+			while(d>0)
+			{
+				a=a*d;
+				d--;
+			}
+			return a;
+		}
+
+		public static void cashCounter(int people) 
+		{
+			int balance=1000;
+			for(int i=0;i<people;i++)
+			{
+				
+				System.out.println("What do you want to do ");
+				System.out.println("1. Deposite ");
+				System.out.println("2. Withdraw ");	
+				System.out.println("enter your choice ");
+				int choice=Utility.getInteger();
+				
+				switch (choice) 
+				{
+				case 1:
+							System.out.println("How much money you want to deposite : ");
+							int money1=Utility.getInteger();
+							Queue.enQueue(money1);
+							balance=balance+money1;
+							System.out.println("Your Balance is : "+balance);
+							int size=Queue.size();
+							System.out.println("size of queue:"+size);
+							//q.deQueue();
+							
+							break;
+							
+						case 2:
+							System.out.println("How much money you want to withdraw : ");
+							
+							int withdraw=Utility.IntegerValue();
+							
+							Queue.enQueue(withdraw);
+							if(balance>withdraw)
+							{
+								balance=balance-withdraw;
+								System.out.println("Your remaining balance is: "+balance);
+							}
+							else
+							{
+								System.out.println("insufficient balance");
+							}
+							
+							Queue.deQueue();
+						
+							break;
+							
+		
+						default:
+							System.out.println("enter valid choice");
+							break;
+						}
+			}
+			
+		}
 }
+
 
 
 	
