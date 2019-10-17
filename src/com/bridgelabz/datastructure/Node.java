@@ -1,9 +1,10 @@
 package com.bridgelabz.datastructure;
 
-public class Node 
+public class Node <T extends Comparable <T>>
 {
- String data;
- Node next;
+ T data;
+	
+ Node<T> next;
 }
  
 

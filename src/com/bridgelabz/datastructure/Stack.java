@@ -11,7 +11,7 @@ public class Stack
 	 * 
 	 * @param c
 	 */
-	private static void push(char c) 
+public	static void push(char c) 
 	{
 		if(top==MAX-1)
 		{
@@ -28,7 +28,7 @@ public class Stack
      * Purpose: method to check if stack is empty or not
      * @return
      */
-	private static boolean isEmpty() 
+	public static boolean isEmpty() 
 	{
 		return top==-1;
 	}
@@ -37,7 +37,7 @@ public class Stack
 	 * 
 	 * @param c
 	 */
-	private static char pop(char c) 
+	public static char pop(char c) 
 	{
 		if(top==-1)
 		{
@@ -51,7 +51,7 @@ public class Stack
 			return element;
 		}
 	}
-	private static int peek() 
+	public static int peek() 
 	{
 		if(top<0)
 		{

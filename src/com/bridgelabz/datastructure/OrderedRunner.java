@@ -43,8 +43,8 @@ public class OrderedRunner
 			System.out.println("Successfully deleted element!");
 			linkedList.show();
 			linkedList.writeOnFile();
-			int size=linkedList.size();
-			System.out.println("Size of linked list is : "+size);
+			int size2=linkedList.size();
+			System.out.println("Size of linked list is : "+size2);
 			
 		}
 		

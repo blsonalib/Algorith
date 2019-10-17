@@ -4,7 +4,14 @@ import java.util.Arrays;
 import java.util.Queue;
 import java.util.Scanner;
 
-//import com.bridgelabz.datastructure.LinkedList.Node;
+import com.bridgelabz.datastructure.HashNode;
+import com.bridgelabz.datastructure.HashingFunction;
+import com.bridgelabz.datastructure.QueuForCash;
+import com.bridgelabz.datastructure.Stack;
+//import com.bridgelabz.datastructure.elseoid;
+//import com.bridgelabz.datastructure.vode;
+
+
 
 public class UtilityD 
 {
@@ -25,6 +32,7 @@ public class UtilityD
 		double Double=scanner.nextDouble();
 		return Double;
 	}
+	
 	/*for prime number 0-1000*/
 	public static boolean primeNumber(int number)
 	{
@@ -112,7 +120,8 @@ public class UtilityD
 	
 	
 	
-	public static int[] primeAnagram(int range) {
+	public static int[] primeAnagram(int range) 
+	{
 		int index = 0;
 		String[] array1 = new String[168];
 		int[] anagram = new int[158];  //to store anagrams
@@ -240,16 +249,20 @@ public class UtilityD
 			return a;
 		}
 
+		/*program for cash counter*/
+		
 		public static void cashCounter(int people) 
 		{
-			int balance=1000;
+			int balance=0;
 			for(int i=0;i<people;i++)
 			{
 				
-				System.out.println("What do you want to do ");
+				System.out.println("-------What do you want to do------- ");
 				System.out.println("1. Deposite ");
 				System.out.println("2. Withdraw ");	
+				System.out.println("3.Exit");
 				System.out.println("enter your choice ");
+			
 				int choice=Utility.getInteger();
 				
 				switch (choice) 
@@ -257,10 +270,10 @@ public class UtilityD
 				case 1:
 							System.out.println("How much money you want to deposite : ");
 							int money1=Utility.getInteger();
-							Queue.enQueue(money1);
+							QueuForCash .enQueue(money1);
 							balance=balance+money1;
 							System.out.println("Your Balance is : "+balance);
-							int size=Queue.size();
+							int size=QueuForCash .getSize();
 							System.out.println("size of queue:"+size);
 							//q.deQueue();
 							
@@ -269,9 +282,9 @@ public class UtilityD
 						case 2:
 							System.out.println("How much money you want to withdraw : ");
 							
-							int withdraw=Utility.IntegerValue();
+							int withdraw=Utility.getInteger();
 							
-							Queue.enQueue(withdraw);
+							QueuForCash .enQueue(withdraw);
 							if(balance>withdraw)
 							{
 								balance=balance-withdraw;
@@ -282,9 +295,11 @@ public class UtilityD
 								System.out.println("insufficient balance");
 							}
 							
-							Queue.deQueue();
+							QueuForCash .deQueue();
 						
 							break;
+						case 3:
+							System.out.println("Exit");
 							
 		
 						default:
@@ -294,8 +309,46 @@ public class UtilityD
 			}
 			
 		}
-}
-
+		
+		/*program for balanced parenthesis */
+		public static String parenthesis(String str )
+		{
+			Stack stack=new Stack();
+			for(int i=0;i<str.length();i++)
+			{
+				char ch=str.charAt(i);
+				if(ch=='['||ch=='('||ch=='{') {
+					stack.push(ch);
+				}
+				else if((ch==']'||ch=='}'||ch==')')&&(!stack.isEmpty()))
+				{
+					if(((char)stack.peek()=='('&&ch==')')||((char)stack.peek()=='{')||((char)stack.peek()=='('&&ch==']'))
+					{
+						stack.pop(ch);
+					}
+					else
+					{
+						return "not balanced";
+					}
+				     }
+				else
+				{
+					if((ch==']'||ch=='}'||ch==')'))
+					{
+						return "not balanced";
+						}
+				}
+			}
+			if (stack.isEmpty())
+				return "balanced";
+			else
+				return " not balanced";
+		}
+		
+		
+		
+				
+} 
 
 
 	

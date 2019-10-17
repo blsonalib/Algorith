@@ -5,9 +5,9 @@ import com.bridgelabz.utility.UtilityD;
 public class CashCounter {
 
 	
-		public static <T> void main(String[] args) 
+		public static void main(String[] args) 
 		{
-			int balance=1000;
+			int balance=0;
 			boolean flag=true;
 			
 			System.out.println("Enter how many people in the queue : ");

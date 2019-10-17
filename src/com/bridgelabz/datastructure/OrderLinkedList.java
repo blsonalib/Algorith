@@ -15,7 +15,7 @@ class NodeNumber<T extends Comparable<T>>
 public class OrderLinkedList<T extends Comparable<T>> 
 {
 	
-	NodeNumber<T> head;
+	 NodeNumber<T> head;
 	
 	public void append(T data)
 	{
@@ -32,7 +32,7 @@ public class OrderLinkedList<T extends Comparable<T>>
 			 NodeNumber<T> current = head;
 			 NodeNumber<T> temp=null;
 			 
-			 while(current!=null && (current.data.compareTo(node.data))<0)
+			 while(current!=null )//(&& (current.data.compareTo(node.data))<0)
 			 {
 				 temp=current;
 				 current=current.next;
@@ -106,6 +106,7 @@ public class OrderLinkedList<T extends Comparable<T>>
 		System.out.println(node.data);
 	  }
 	  
+	  
 	public void writeOnFile() 
 	{
 		readFile();
@@ -118,7 +119,7 @@ public class OrderLinkedList<T extends Comparable<T>>
 		}
 		first = first.trim() + " " + n.data.toString().trim();
 
-		try (BufferedWriter writer = new BufferedWriter(new FileWriter("/home/userq/BridgelabzSonali/Newjavaproject/src/com/bridgelabz/files/orderlist.txt"))) 
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter("/home/admin1/eclipse-workspace/Fellowship_java/src/com/bridgelabz/files/Ordered.txt"))) 
 		{
 			writer.write(first);
 			writer.close();
@@ -197,7 +198,7 @@ public class OrderLinkedList<T extends Comparable<T>>
 	{
 		try 
 		{
-			File f= new File("/home/userq/BridgelabzSonali/Newjavaproject/src/com/bridgelabz/files/orderlist.txt");
+			File f= new File("/home/admin1/eclipse-workspace/Fellowship_java/src/com/bridgelabz/files/Ordered.txt");
 			Scanner sc= new Scanner(f);
 			int count=0;
 			while(sc.hasNextInt())
@@ -244,3 +245,4 @@ public class OrderLinkedList<T extends Comparable<T>>
 		return array;
 	}
 }
+

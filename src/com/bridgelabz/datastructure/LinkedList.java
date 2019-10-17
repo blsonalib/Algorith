@@ -18,6 +18,7 @@ public class LinkedList
 		 Node next;
 	
 	 }
+	
 	 
 	 public void insert(String i)
 	 {
@@ -146,14 +147,14 @@ public class LinkedList
 	 {
 		Node temp = head, prev = null;		
 		if(temp!= null && temp.data==element)
-	{
+	     {
 			head=temp.next;
 			return;
 		}
 	
 	while(temp!=null && temp.data!=element)
 		{
-		prev=temp;
+		    prev=temp;
 			temp=temp.next;
 			
 	}
@@ -266,7 +267,7 @@ public class LinkedList
 			}
 			first=first.trim()+" "+n.data.toString().trim();
 			
-			try(BufferedWriter writer= new BufferedWriter(new FileWriter("/home/userq/BridgelabzSonali/Newjavaproject/src/com/bridgelabz/files/Unorder.txt"))) 
+			try(BufferedWriter writer= new BufferedWriter(new FileWriter("/home/admin1/eclipse-workspace/Fellowship_java/src/com/bridgelabz/files/Unorder.txt"))) 
 			{
 				
 			writer.write(first);
@@ -289,7 +290,7 @@ public class LinkedList
 		
 		FileReader fileReader;
 		try {
-			fileReader = new FileReader("/home/userq/BridgelabzSonali/Newjavaproject/src/com/bridgelabz/files/Unorder.txt");
+			fileReader = new FileReader("/home/admin1/eclipse-workspace/Fellowship_java/src/com/bridgelabz/files/Unorder.txt");
 			BufferedReader bufferedReader=new BufferedReader(fileReader);
 			
 			 //Gets each line till end of file is reached
@@ -409,7 +410,16 @@ public class LinkedList
 			
 		 }
 
-
-
-
+		 public void removePos(int index) 
+		  {
+			  Node n =head;
+			  Node n1=null;
+		  	  for(int i=0;i<index-1;i++) 
+		  	  {
+		  		  n=n.next; 
+			  }
+		  	  n1=n.next; 
+		  	  n.next=n1.next; 
+		  }
+		    
 }

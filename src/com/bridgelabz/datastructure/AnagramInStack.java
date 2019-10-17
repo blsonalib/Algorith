@@ -10,10 +10,12 @@ public class AnagramInStack
 		StackLinkedList stack=new StackLinkedList();
 		int result[]=UtilityD.primeAnagram(1000);
 		for(int i=result.length-1;i>=0;i--)
-			stack.push(result[i]);
+		{
+			stack.push(result[i]);}
 			System.out.println(result);
-			stack.display();
-	}
-	}
+		    stack.display();
+		
+	       }
+}
 
 

@@ -2,8 +2,8 @@ package com.bridgelabz.datastructure;
 
 public class PrimeNumber {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args)
+	{
 		int[][] elements = isPrime();
 		for(int i = 0; i < elements.length; i++)
 		{

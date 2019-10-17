@@ -16,7 +16,7 @@ public class UnorderedLinkedList
 	int count = 0;
 	LinkedList linkedList=new LinkedList();
 	
-	FileReader fileReader=new FileReader("/home/userq/BridgelabzSonali/Newjavaproject/src/com/bridgelabz/files/Unorder.txt");
+	FileReader fileReader=new FileReader("/home/admin1/eclipse-workspace/Fellowship_java/src/com/bridgelabz/files/Unorder.txt");
 	BufferedReader bufferedReader=new BufferedReader(fileReader);
 	
 	 //Gets each line till end of file is reached
@@ -55,6 +55,7 @@ public class UnorderedLinkedList
 		System.out.println("Successfully written on file!");
 		int size1=linkedList.lengthOfLinkedList();
 		System.out.println("Size of linked list is : "+size1);
+		//linkedList.append(element);
 		linkedList.show();			
 	}
 	else

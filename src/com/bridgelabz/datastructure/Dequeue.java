@@ -50,33 +50,30 @@ public class Dequeue
 
 	public static char insertElementAtRear(char key) 
 	{ 
-//		size();
-//		System.out.println("size of queue : "+size);
-		if (isFull()) 
+	if (isFull()) 
 		{ 
 			System.out.println(" Overflow "); 
 			return key; 
 		} 
 
-		// If queue is initially empty 
 		if (front == -1) 
 		{ 
 			front = 0; 
 			rear = 0; 
 		} 
 
-		// rear is at last position of queue 
+		
 		else if (rear == size-1) 
 			rear = 0; 
 
-		// increment rear end by '1' 
+		
 		else
 			rear = rear+1; 
 		array[rear] = key; 
 		return key;
 	} 
 
-	// Deletes element at front end of Deque 
+	
 	public static char deleteFront() 
 	{ 
 		if (isEmpty()) 
@@ -91,8 +88,7 @@ public class Dequeue
 			front = -1; 
 			rear = -1; 
 		} 
-//		else {
-			// back to initial position 
+
 			if (front == size -1) 
 				front = 0; 
 
@@ -101,7 +97,7 @@ public class Dequeue
 		return ch1; 
 	} 
 
-	// Delete element at rear end of Deque 
+	
 	public static char deleteRear() 
 	{ 
 		if (isEmpty()) 

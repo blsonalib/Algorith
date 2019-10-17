@@ -5,7 +5,7 @@ import com.bridgelabz.utility.UtilityD;
 public class Calender2Darray
 {
 	static int[][] calender = new int[5][7];
-	static int[] month = { 31,29,31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	static int[] month = { 31,28,31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 	static void initCal() 
 	{
@@ -13,7 +13,7 @@ public class Calender2Darray
 		{
 			for (int j = 0; j < calender[i].length; j++) 
 			{
-				calender[i][j] = -10;
+				calender[i][j] =- 10;
 			}
 		}
 	}
